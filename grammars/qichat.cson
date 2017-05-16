@@ -241,18 +241,37 @@
         'name': 'qichat-1'
   }
   {
-    'match': '^(concept:)\\([^)]+\\)\\s?.*\\n'
-    'captures':
-      1:
-        'name': 'qichat-1'
-  }
-  {
     'begin': '(u[1-3]?:\\()'
     'end': '(\\))'
     'captures':
       1:
         'name': 'qichat-1'
       2:
+        'name': 'qichat-1'
+    'patterns': [
+      {
+        'include': '#concept'
+      }
+      {
+        'include': '#event'
+      }
+      {
+        'include': '#u-kakko1'
+      }
+      {
+        'include': '#u-kakko2'
+      }
+      {
+        'include': '#u-kakko3'
+      }
+    ]
+    'contentName': 'source'
+  }
+  {
+    'begin': '(concept:\\(.+\\))'
+    'end': '\\n'
+    'captures':
+      1:
         'name': 'qichat-1'
     'patterns': [
       {
